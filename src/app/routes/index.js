@@ -22,11 +22,25 @@ const Project = Loadable({
   modules: ["project"]
 });
 
+const Contact = Loadable({
+  loader: () => import(/* webpackChunkName: "profile" */ "./contacts"),
+  loading: () => null,
+  modules: ["contact"]
+});
+
+const News = Loadable({
+  loader: () => import(/* webpackChunkName: "profile" */ "./news"),
+  loading: () => null,
+  modules: ["news"]
+});
+
 export default () => (
   <Switch>
     <Route exact path="/" component={Homepage} />
     <Route exact path="/projects/:url" component={Project} />
     <Route exact path="/about" component={About} />
+    <Route exact path="/contact" component={Contact} />
+    <Route exact path="/news" component={News} />
 
     <Route component={NotFound} />
   </Switch>

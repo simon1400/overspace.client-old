@@ -5,6 +5,8 @@ import { withRouter } from "react-router";
 import Header from "./header";
 import Routes from "./routes";
 
+import "./preloader.min.css";
+
 class App extends Component {
   render() {
     return (

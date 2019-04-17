@@ -55,7 +55,6 @@ export default class Header extends Component {
 
   render() {
     var data = this.state.soc.soc;
-    console.log(data);
     return (
       <header>
         <div className="uk-container">
@@ -69,10 +68,8 @@ export default class Header extends Component {
               <nav>
                 <ul>
                   {links.map((link, index) => (
-                    <li>
-                      <Link key={index} to={link.to}>
-                        {link.text}
-                      </Link>
+                    <li key={index}>
+                      <Link to={link.to}>{link.text}</Link>
                     </li>
                   ))}
                 </ul>

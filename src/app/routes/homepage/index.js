@@ -66,7 +66,15 @@ export default class Homepage extends Component {
         </Page>
       );
     } else {
-      return <div>Loadding...</div>;
+      return (
+        <div className="preloader uk-inline">
+          <div className="uk-overlay-default uk-position-cover">
+            <div className="uk-position-center">
+              <span className="uk-margin-small-right" uk-spinner="ratio: 3" />
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 }

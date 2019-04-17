@@ -45,7 +45,6 @@ export default class Contacts extends Component {
 
   render() {
     var data = this.state.data;
-    console.log(data);
     if (Object.keys(data).length) {
       return (
         <Page
@@ -139,7 +138,15 @@ export default class Contacts extends Component {
         </Page>
       );
     } else {
-      return <div>Loading...</div>;
+      return (
+        <div class="preloader uk-inline">
+          <div class="uk-overlay-default uk-position-cover">
+            <div class="uk-position-center">
+              <span class="uk-margin-small-right" uk-spinner="ratio: 3" />
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 }
