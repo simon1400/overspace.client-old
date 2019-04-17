@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Page from "../../components/page";
 
-export default class About extends Component {
+export default class Contacts extends Component {
   render() {
     return (
       <Page
@@ -11,16 +11,16 @@ export default class About extends Component {
       >
         <div class="uk-container">
           <div
-            class="uk-grid uk-child-width-1-1"
+            class="uk-grid uk-child-width-1-2@s uk-child-width-1-1"
             uk-grid="true"
             uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 400"
           >
             <div>
-              <div class="news-item">
+              <div class="contact-item">
                 <div
                   class="uk-position-relative uk-visible-toggle uk-light"
                   tabindex="-1"
-                  uk-slideshow="ratio: 7:3"
+                  uk-slideshow="ratio: 7:4"
                 >
                   <ul class="uk-slideshow-items">
                     <li>
@@ -48,7 +48,7 @@ export default class About extends Component {
                   />
                 </div>
                 <div class="content">
-                  <h2 class="head">NOVINKA 1</h2>
+                  <h2 class="head">MARTIN ENEV</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                     sed diam nonummy nibh euismod tincidunt ut laoreet dolore
@@ -59,29 +59,19 @@ export default class About extends Component {
                     consequat, vel illum dolore eu feugiat nulla facilisis at
                     vero eros et accumsan et iusto odio dignissim qui blandit
                     praesent luptatum zzril delenit augue duis dolore te feugait
-                    nulla facilisi.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit lobortis
-                    nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-                    iriure dolor in hendrerit in vulputate velit esse molestie
-                    consequat, vel illum dolore eu feugiat nulla facilisis at
-                    vero eros et accumsan et iusto odio dignissim qui blandit
-                    praesent luptatum zzril delenit augue duis dolore te feugait
-                    nulla facilisi.Lorem ipsum dolor sit amet, consectetuer
+                    nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer
                     adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
                     laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
                     minim veniam, quis nostrud exerci tation ullamcorper
-                    suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                    Duis autem vel eum iriure dolor in hendrerit in vulputate
-                    velit esse molestie consequat, vel illum dolore eu feugiat
-                    nulla facilisis at vero eros et accumsan et iusto odio
-                    dignissim qui blandit praesent luptatum zzril delenit augue
-                    duis dolore te feugait nulla facilisi.
+                    suscipit lobor
                   </p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit</li>
+                    <li>Lorem ipfsfssdfsum dolor sit</li>
+                    <li>Lorem ipsum dolor sit</li>
+                    <li>Lorem ipasdfsdfasdfsafsum dolor sit</li>
+                  </ul>
+                  <a href="/">facebook</a>
                 </div>
               </div>
             </div>

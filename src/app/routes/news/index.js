@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Page from "../../components/page";
 
-export default class About extends Component {
+export default class News extends Component {
   render() {
     return (
       <Page

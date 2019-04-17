@@ -8,6 +8,9 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/register": "^7.0.0",
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/client": "^0.140.11",
+    "@sanity/image-url": "^0.140.12",
     "babel-plugin-dynamic-import-node": "^2.1.0",
     "connected-react-router": "^4.5.0",
     "cookie-parser": "^1.4.3",
@@ -27,7 +30,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.0.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uikit": "^3.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

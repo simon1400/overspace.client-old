@@ -1,79 +1,114 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
+import envelope from "./assets/envelope-regular.svg";
+import facebook from "./assets/facebook-square-brands.svg";
+
+import sanityClient from "../lib/sanity.js";
+
+const query = `*[_type == "settings"] {
+  _id,
+  soc
+}[0...1]
+`;
 
 const links = [
   {
-    to: '/',
-    text: 'Homepage'
+    to: "/",
+    text: "Projects"
   },
   {
-    to: '/about',
-    text: 'About'
+    to: "/about",
+    text: "About"
   },
   {
-    to: '/profile/1',
-    text: 'Profile 1'
+    to: "/news",
+    text: "News"
   },
   {
-    to: '/profile/2',
-    text: 'Profile 2'
-  },
-  {
-    to: '/login',
-    text: 'Login',
-    auth: false
-  },
-  {
-    to: '/dashboard',
-    text: 'Dashboard',
-    auth: true
-  },
-  {
-    to: '/logout',
-    text: 'Logout',
-    auth: true
-  },
-  {
-    to: '/this-is-broken',
-    text: 'Broken Page'
+    to: "/contact",
+    text: "Contact"
   }
 ];
 
-const isCurrent = (to, current) => {
-  if (to === '/' && current === to) {
-    return true;
-  } else if (to !== '/' && current.includes(to)) {
-    return true;
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      soc: {}
+    };
+    this.getData = this.getData.bind(this);
   }
 
-  return false;
-};
+  componentDidMount() {
+    sanityClient
+      .fetch(query)
+      .then(this.getData)
+      .catch(err => console.log(err));
+  }
 
-const HeaderLink = ({ to, text, current }) => (
-  <li className={isCurrent(to, current) ? 'current' : ''}>
-    <Link to={to}>{text}</Link>
-  </li>
-);
+  getData(data) {
+    this.setState({
+      soc: data[0]
+    });
+  }
 
-export default ({ isAuthenticated, current }) => (
-  <header id="header">
-    <h1 id="title">My awesome website</h1>
-    <ul id="links">
-      {links.map((link, index) => {
-        const TheLink = <HeaderLink key={index} current={current} {...link} />;
-
-        if (link.hasOwnProperty('auth')) {
-          if (link.auth && isAuthenticated) {
-            return TheLink;
-          } else if (!link.auth && !isAuthenticated) {
-            return TheLink;
-          }
-
-          return null;
-        }
-
-        return TheLink;
-      })}
-    </ul>
-  </header>
-);
+  render() {
+    var data = this.state.soc.soc;
+    console.log(data);
+    return (
+      <header>
+        <div className="uk-container">
+          <div className="uk-grid" uk-grid="true">
+            <div className="uk-width-1-5">
+              <div className="logo">
+                <a href="/">Overspace</a>
+              </div>
+            </div>
+            <div className="uk-width-4-5">
+              <nav>
+                <ul>
+                  {links.map((link, index) => (
+                    <li>
+                      <Link key={index} to={link.to}>
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <ul className="soc-icons">
+                  {data ? (
+                    <li>
+                      <a href={data.facebook}>
+                        <img src={facebook} alt="Facebook" />
+                      </a>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                  {data ? (
+                    <li>
+                      <a href={`mailto:${data.email}`}>
+                        <img src={envelope} alt="Email" />
+                      </a>
+                    </li>
+                  ) : (
+                    ""
+                  )}
+                </ul>
+              </nav>
+              <button
+                className="hamburger hamburger--spring uk-align-right"
+                type="button"
+              >
+                <span className="hamburger-box">
+                  <span className="hamburger-inner" />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+}

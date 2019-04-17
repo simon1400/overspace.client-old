@@ -1,11 +1,72 @@
-import React from 'react';
-import Page from '../../components/page';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Page from "../../components/page";
 
-import logo from '../../assets/logo.jpg';
+import sanityClient from "../../../lib/sanity.js";
 
-export default () => (
-  <Page id="homepage">
-    <p>Here's our homepage. All are welcome.</p>
-    <img src={logo} alt="Homepage" style={{ width: '400px' }} />
-  </Page>
-);
+const query = `*[_type == "projects"] {
+  _id,
+  title,
+  slug,
+  "image": images[0].asset->url
+}[0...20]
+`;
+
+export default class Homepage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: {}
+    };
+    this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount() {
+    sanityClient
+      .fetch(query)
+      .then(this.getData)
+      .catch(err => console.log(err));
+  }
+
+  getData(data) {
+    this.setState({
+      projects: data
+    });
+  }
+
+  render() {
+    var data = this.state.projects;
+    if (Object.keys(data).length) {
+      return (
+        <Page id="projects">
+          <div className="uk-container">
+            <div
+              className="uk-grid"
+              uk-grid="true"
+              uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 400"
+            >
+              {data.map((item, index) => (
+                <div key={index} className="uk-width-1-4@s uk-width-1-2">
+                  <Link to={`/projects/${item.slug.current}`}>
+                    <div className="project-short-item uk-cover-container">
+                      <img
+                        src={`${item.image}?w=400&h=400`}
+                        alt={item.title}
+                        uk-cover="true"
+                      />
+                      <div className="uk-position-cover uk-overlay uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                        <h2 className="head">{item.title}</h2>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Page>
+      );
+    } else {
+      return <div>Loadding...</div>;
+    }
+  }
+}
