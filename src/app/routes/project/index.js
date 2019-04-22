@@ -48,8 +48,8 @@ export default class Contacts extends Component {
     if (Object.keys(data).length) {
       return (
         <Page
-          id="about"
-          title="About"
+          id="project"
+          title={data.title}
           description="This is about really cool stuff."
         >
           <div className="uk-container">

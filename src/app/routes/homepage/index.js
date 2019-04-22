@@ -4,7 +4,7 @@ import Page from "../../components/page";
 
 import sanityClient from "../../../lib/sanity.js";
 
-const query = `*[_type == "projects"] {
+const query = `*[_type == "projects"] | order(short) {
   _id,
   title,
   slug,

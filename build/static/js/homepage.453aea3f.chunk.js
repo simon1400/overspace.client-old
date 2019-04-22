@@ -1,32 +1,32 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
   [2],
   {
-    202: function(e, t, a) {
+    204: function(e, t, a) {
       "use strict";
       a.r(t),
         a.d(t, "default", function() {
           return p;
         });
-      var n = a(11),
-        c = a(12),
-        r = a(15),
-        i = a(13),
-        s = a(21),
-        l = a(14),
-        o = a(1),
+      var n = a(12),
+        c = a(13),
+        r = a(16),
+        s = a(14),
+        i = a(8),
+        l = a(15),
+        o = a(0),
         u = a.n(o),
-        m = a(177),
+        m = a(178),
         d = a(39),
-        k = a(38),
+        k = a(23),
         p = (function(e) {
           function t(e) {
             var a;
             return (
               Object(n.a)(this, t),
-              ((a = Object(r.a)(this, Object(i.a)(t).call(this, e))).state = {
+              ((a = Object(r.a)(this, Object(s.a)(t).call(this, e))).state = {
                 projects: {}
               }),
-              (a.getData = a.getData.bind(Object(s.a)(a))),
+              (a.getData = a.getData.bind(Object(i.a)(a))),
               a
             );
           }
@@ -38,7 +38,7 @@
                 value: function() {
                   k.a
                     .fetch(
-                      '*[_type == "projects"] {\n  _id,\n  title,\n  slug,\n  "image": images[0].asset->url\n}[0...20]\n'
+                      '*[_type == "projects"] | order(short) {\n  _id,\n  title,\n  slug,\n  "image": images[0].asset->url\n}[0...20]\n'
                     )
                     .then(this.getData)
                     .catch(function(e) {
@@ -136,4 +136,4 @@
     }
   }
 ]);
-//# sourceMappingURL=homepage.c084fdf2.chunk.js.map
+//# sourceMappingURL=homepage.453aea3f.chunk.js.map

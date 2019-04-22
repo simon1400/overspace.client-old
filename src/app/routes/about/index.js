@@ -4,7 +4,7 @@ import Page from "../../components/page";
 import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../../../lib/sanity.js";
 
-const query = `*[_type == "about"] {
+const query = `*[_type == "about"] | order(short) {
   _id,
   title,
   content,

@@ -8557,7 +8557,7 @@ header nav ul li a:hover {
   color: #000;
   text-decoration: none;
 }
-header nav ul li a:hover:after {
+header nav ul li a:hover:after, .active_mnu:after {
   width: 100%;
 }
 .project-short-item {
@@ -8687,6 +8687,15 @@ header nav ul li a:hover:after {
     padding-left: 80px;
     padding-top: 150px;
   }
+
+  header nav ul li a:after {
+    background-color: #fff;
+  }
+
+  header nav ul li a:hover{
+    color: #fff;
+  }
+
   header nav ul.soc-icons {
     margin-left: 0;
     margin-top: 20px;

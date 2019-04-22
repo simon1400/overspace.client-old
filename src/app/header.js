@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import window from 'global'
 
 import envelope from "./assets/envelope-regular.svg";
 import facebook from "./assets/facebook-square-brands.svg";
@@ -8,36 +9,49 @@ import sanityClient from "../lib/sanity.js";
 
 const query = `*[_type == "settings"] {
   _id,
-  soc
+  soc,
+  name
 }[0...1]
 `;
 
 const links = [
   {
     to: "/",
-    text: "Projects"
+    text: "Projects",
+    active: false
   },
   {
     to: "/about",
-    text: "About"
+    text: "About",
+    active: false
   },
   {
     to: "/news",
-    text: "News"
+    text: "News",
+    active: false
   },
   {
     to: "/contact",
-    text: "Contact"
+    text: "Contact",
+    active: false
   }
 ];
 
-export default class Header extends Component {
+
+
+
+
+ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      soc: {}
+      soc: {},
+      activeIndex: 0,
+      activeMenu: false
     };
     this.getData = this.getData.bind(this);
+    this.activeMenu = this.activeMenu.bind(this);
+    this.menuToggle = this.menuToggle.bind(this);
   }
 
   componentDidMount() {
@@ -45,12 +59,51 @@ export default class Header extends Component {
       .fetch(query)
       .then(this.getData)
       .catch(err => console.log(err));
+
+
+      var location = this.props.location.pathname;
+      links.map(item => {
+        if(location === item.to){
+          return item.active = true;
+        }else{
+          return item.active = false;
+        }
+      })
+
+
+      function search(nameKey, myArray){
+          for (var i=0; i < myArray.length; i++) {
+              if (myArray[i].active === nameKey) {
+                return i;
+              }
+          }
+      }
+
+      var resultObject = search(true, links);
+
+      this.setState({
+        activeIndex: resultObject
+      })
   }
 
   getData(data) {
     this.setState({
       soc: data[0]
     });
+  }
+
+
+  activeMenu(e, index) {
+    this.setState({
+      activeIndex: index,
+      activeMenu: false
+    })
+  }
+
+  menuToggle() {
+    this.setState({
+      activeMenu: !this.state.activeMenu
+    })
   }
 
   render() {
@@ -61,15 +114,15 @@ export default class Header extends Component {
           <div className="uk-grid" uk-grid="true">
             <div className="uk-width-1-5">
               <div className="logo">
-                <a href="/">Overspace</a>
+                <a href="/">{this.state.soc.name}</a>
               </div>
             </div>
             <div className="uk-width-4-5">
-              <nav>
+              <nav className={this.state.activeMenu ? 'active_mnu_mobile' : ''}>
                 <ul>
                   {links.map((link, index) => (
                     <li key={index}>
-                      <Link to={link.to}>{link.text}</Link>
+                      <Link to={link.to} className={this.state.activeIndex === index ? 'active_mnu' : ''} onClick={e => this.activeMenu(e, index)}>{link.text}</Link>
                     </li>
                   ))}
                 </ul>
@@ -95,8 +148,9 @@ export default class Header extends Component {
                 </ul>
               </nav>
               <button
-                className="hamburger hamburger--spring uk-align-right"
+                className={`hamburger hamburger--spring uk-align-right ${this.state.activeMenu ? 'is-active' : ''}`}
                 type="button"
+                onClick={this.menuToggle}
               >
                 <span className="hamburger-box">
                   <span className="hamburger-inner" />
@@ -109,3 +163,7 @@ export default class Header extends Component {
     );
   }
 }
+
+const SomeComponent = withRouter(props => <Header {...props}/>);
+
+export default SomeComponent

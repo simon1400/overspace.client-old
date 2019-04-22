@@ -1,24 +1,24 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
   [1],
   {
-    203: function(e, t, a) {
+    205: function(e, t, a) {
       "use strict";
       a.r(t),
         a.d(t, "default", function() {
           return k;
         });
-      var n = a(11),
-        i = a(12),
-        l = a(15),
-        s = a(13),
-        c = a(21),
-        r = a(14),
-        o = a(1),
+      var n = a(12),
+        i = a(13),
+        l = a(16),
+        s = a(14),
+        r = a(8),
+        c = a(15),
+        o = a(0),
         u = a.n(o),
         m = a(39),
-        d = a(180),
+        d = a(182),
         h = a.n(d),
-        v = a(38),
+        v = a(23),
         k = (function(e) {
           function t(e) {
             var a;
@@ -27,19 +27,19 @@
               ((a = Object(l.a)(this, Object(s.a)(t).call(this, e))).state = {
                 data: []
               }),
-              (a.getData = a.getData.bind(Object(c.a)(a))),
+              (a.getData = a.getData.bind(Object(r.a)(a))),
               a
             );
           }
           return (
-            Object(r.a)(t, e),
+            Object(c.a)(t, e),
             Object(i.a)(t, [
               {
                 key: "componentDidMount",
                 value: function() {
                   v.a
                     .fetch(
-                      '*[_type == "about"] {\n  _id,\n  title,\n  content,\n  "images": images[].asset->url\n}[0...3]\n'
+                      '*[_type == "about"] | order(short) {\n  _id,\n  title,\n  content,\n  "images": images[].asset->url\n}[0...3]\n'
                     )
                     .then(this.getData)
                     .catch(function(e) {
@@ -216,4 +216,4 @@
     }
   }
 ]);
-//# sourceMappingURL=about.6e012eee.chunk.js.map
+//# sourceMappingURL=about.9ad091ef.chunk.js.map

@@ -7728,6 +7728,7 @@ header nav ul li a:hover {
   color: #000;
   text-decoration: none;
 }
+.active_mnu:after,
 header nav ul li a:hover:after {
   width: 100%;
 }
@@ -7850,6 +7851,12 @@ header nav ul li a:hover:after {
     padding-left: 80px;
     padding-top: 150px;
   }
+  header nav ul li a:after {
+    background-color: #fff;
+  }
+  header nav ul li a:hover {
+    color: #fff;
+  }
   header nav ul.soc-icons {
     margin-left: 0;
     margin-top: 20px;
@@ -7907,4 +7914,4 @@ header nav ul li a:hover:after {
     padding-top: 120px;
   }
 }
-/*# sourceMappingURL=main.93eda09a.chunk.css.map */
+/*# sourceMappingURL=main.7e3161a9.chunk.css.map */

@@ -4,7 +4,7 @@ import Page from "../../components/page";
 import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../../../lib/sanity.js";
 
-const query = `*[_type == "news"] {
+const query = `*[_type == "news"] | order(short) {
   _id,
   title,
   content,
@@ -40,9 +40,8 @@ export default class News extends Component {
     if (Object.keys(data).length) {
       return (
         <Page
-          id="about"
-          title="About"
-          description="This is about really cool stuff."
+          id="news"
+          title="News"
         >
           <div className="uk-container">
             <div

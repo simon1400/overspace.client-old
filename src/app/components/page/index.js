@@ -2,21 +2,53 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import Helmet from "react-helmet";
 
+import sanityClient from "../../../lib/sanity.js";
+
 const SITE_URL =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://cra-ssr.herokuapp.com";
+    : "http://overspace.hardart.cz";
 
 const FACEBOOK_APP_ID = "XXXXXXXXX";
 
-const defaultTitle = "My Website";
-const defaultDescription =
-  "This is a really awesome website where we can render on the server. Supa cool.";
+const query = `*[_type == "settings"] {
+  _id,
+  title,
+  description
+}[0...1]
+`;
+
 const defaultImage = ``;
 const defaultTwitter = "@cereallarceny";
 const defaultSep = " | ";
 
 class Page extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      defaultTitle: "Overspace",
+      defaultDescription: "Overspace"
+    }
+
+    this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount() {
+    sanityClient
+      .fetch(query)
+      .then(this.getData)
+      .catch(err => console.log(err));
+  }
+
+  getData(data) {
+    this.setState({
+      defaultTitle: data[0].title,
+      defaultDescription: data[0].description
+    });
+  }
+
+
   getMetaTags(
     {
       title,
@@ -33,11 +65,11 @@ class Page extends Component {
     pathname
   ) {
     const theTitle = title
-      ? (title + defaultSep + defaultTitle).substring(0, 60)
-      : defaultTitle;
+      ? (title + defaultSep + this.state.defaultTitle).substring(0, 60)
+      : this.state.defaultTitle;
     const theDescription = description
       ? description.substring(0, 155)
-      : defaultDescription;
+      : this.state.defaultDescription;
     const theImage = image ? `${SITE_URL}${image}` : defaultImage;
 
     const metaTags = [
@@ -56,7 +88,7 @@ class Page extends Component {
       { property: "og:url", content: SITE_URL + pathname },
       { property: "og:image", content: theImage },
       { property: "og:description", content: theDescription },
-      { property: "og:site_name", content: defaultTitle },
+      { property: "og:site_name", content: this.state.defaultTitle },
       { property: "fb:app_id", content: FACEBOOK_APP_ID }
     ];
 
@@ -92,7 +124,7 @@ class Page extends Component {
             itemtype: `http://schema.org/${rest.schema || "WebPage"}`
           }}
           title={
-            rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle
+            rest.title ? rest.title + defaultSep + this.state.defaultTitle : this.state.defaultTitle
           }
           link={[
             {

@@ -1,12 +1,12 @@
 (window.webpackJsonp = window.webpackJsonp || []).push([
   [0],
   {
-    180: function(t, e, r) {
+    182: function(t, e, r) {
       "use strict";
-      var n = r(1),
-        i = r(0),
-        o = r(181),
-        a = r(196),
+      var n = r(0),
+        i = r(1),
+        o = r(183),
+        a = r(198),
         l = a.serializers,
         u = a.serializeSpan,
         s = a.renderProps,
@@ -50,13 +50,13 @@
         }),
         (t.exports = d);
     },
-    181: function(t, e, r) {
-      t.exports = r(184);
+    183: function(t, e, r) {
+      t.exports = r(186);
     },
-    182: function(t, e, r) {
+    184: function(t, e, r) {
       "use strict";
-      var n = r(186),
-        i = r(187),
+      var n = r(188),
+        i = r(189),
         o = r(2),
         a = encodeURIComponent,
         l =
@@ -96,7 +96,7 @@
           .toString();
       };
     },
-    183: function(t, e, r) {
+    185: function(t, e, r) {
       "use strict";
       var n =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
@@ -131,12 +131,12 @@
         }, {});
       };
     },
-    184: function(t, e, r) {
+    186: function(t, e, r) {
       "use strict";
-      var n = r(185),
-        i = r(192),
-        o = r(182),
-        a = r(183);
+      var n = r(187),
+        i = r(194),
+        o = r(184),
+        a = r(185);
       t.exports = {
         blocksToNodes: function(t, e, r, o) {
           if (r) return i(t, e, r, o);
@@ -148,10 +148,10 @@
         mergeSerializers: a
       };
     },
-    185: function(t, e, r) {
+    187: function(t, e, r) {
       "use strict";
       var n = r(2),
-        i = r(182);
+        i = r(184);
       t.exports = function(t, e) {
         var r = e || { useDashedStyles: !1 };
         function o(e, r) {
@@ -265,15 +265,15 @@
         };
       };
     },
-    186: function(t, e) {
+    188: function(t, e) {
       t.exports = function(t) {
         return "https://docs.sanity.io/help/" + t;
       };
     },
-    187: function(t, e, r) {
-      t.exports = r(188).default;
+    189: function(t, e, r) {
+      t.exports = r(190).default;
     },
-    188: function(t, e, r) {
+    190: function(t, e, r) {
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 }),
         (e.default = function(t) {
@@ -289,7 +289,7 @@
           return new c(null, t);
         });
       var n,
-        i = (n = r(189)) && n.__esModule ? n : { default: n };
+        i = (n = r(191)) && n.__esModule ? n : { default: n };
       function o(t) {
         return (o =
           "function" === typeof Symbol && "symbol" === typeof Symbol.iterator
@@ -549,7 +549,7 @@
           );
         })();
     },
-    189: function(t, e, r) {
+    191: function(t, e, r) {
       "use strict";
       Object.defineProperty(e, "__esModule", { value: !0 }),
         (e.default = function(t) {
@@ -717,8 +717,8 @@
             return n.default;
           }
         });
-      var n = o(r(190)),
-        i = o(r(191));
+      var n = o(r(192)),
+        i = o(r(193));
       function o(t) {
         return t && t.__esModule ? t : { default: t };
       }
@@ -769,7 +769,7 @@
         ["crop", "crop"]
       ];
     },
-    190: function(t, e, r) {
+    192: function(t, e, r) {
       "use strict";
       function n(t, e, r) {
         return (
@@ -851,7 +851,7 @@
           })(e);
         });
     },
-    191: function(t, e, r) {
+    193: function(t, e, r) {
       "use strict";
       function n(t, e) {
         return (
@@ -915,13 +915,13 @@
         });
       var i = "image-Tb9Ew8CXIwaY6R1kjMvI0uRR-2000x3000-jpg";
     },
-    192: function(t, e, r) {
+    194: function(t, e, r) {
       "use strict";
       var n = r(2),
-        i = r(193),
-        o = r(194),
-        a = r(195),
-        l = r(183),
+        i = r(195),
+        o = r(196),
+        a = r(197),
+        l = r(185),
         u = ["projectId", "dataset", "imageOptions"],
         s = function(t) {
           return "undefined" !== typeof t;
@@ -1000,7 +1000,7 @@
             : v.empty;
       };
     },
-    193: function(t, e, r) {
+    195: function(t, e, r) {
       "use strict";
       var n = ["strong", "em", "code", "underline", "strike-through"];
       function i(t, e, r) {
@@ -1088,7 +1088,7 @@
         );
       };
     },
-    194: function(t, e, r) {
+    196: function(t, e, r) {
       "use strict";
       var n = r(2);
       function i(t) {
@@ -1169,7 +1169,7 @@
         return r;
       };
     },
-    195: function(t, e, r) {
+    197: function(t, e, r) {
       "use strict";
       var n = r(2);
       function i(t) {
@@ -1197,10 +1197,10 @@
         });
       };
     },
-    196: function(t, e, r) {
+    198: function(t, e, r) {
       "use strict";
-      var n = r(1),
-        i = (0, r(181).getSerializers)(n.createElement),
+      var n = r(0),
+        i = (0, r(183).getSerializers)(n.createElement),
         o = i.defaultSerializers,
         a = i.serializeSpan;
       t.exports = {
@@ -1211,4 +1211,4 @@
     }
   }
 ]);
-//# sourceMappingURL=0.f951660e.chunk.js.map
+//# sourceMappingURL=0.23fcc71b.chunk.js.map
