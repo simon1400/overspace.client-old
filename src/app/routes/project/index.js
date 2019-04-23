@@ -82,7 +82,7 @@ export default class Contacts extends Component {
                   </ul>
 
                   <a
-                    className="uk-position-center-left uk-position-small uk-hidden-hover"
+                    className="uk-position-center-left uk-position-small"
                     href="#"
                     uk-slidenav-previous="true"
                     uk-slideshow-item="previous"
@@ -90,7 +90,7 @@ export default class Contacts extends Component {
                     <img src={left} alt="Left" />
                   </a>
                   <a
-                    className="uk-position-center-right uk-position-small uk-hidden-hover"
+                    className="uk-position-center-right uk-position-small"
                     href="#"
                     uk-slidenav-next="true"
                     uk-slideshow-item="next"

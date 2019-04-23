@@ -129,7 +129,7 @@ class Header extends Component {
                 <ul className="soc-icons">
                   {data ? (
                     <li>
-                      <a href={data.facebook}>
+                      <a href={data.facebook} target="_blank">
                         <img src={facebook} alt="Facebook" />
                       </a>
                     </li>

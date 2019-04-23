@@ -61,8 +61,8 @@
         O = n(14),
         w = n(15),
         _ = n(20),
-        T = n(8),
-        k = n(177),
+        k = n(8),
+        T = n(177),
         N = n(178),
         x = n(64),
         D = n.n(x),
@@ -85,9 +85,9 @@
                 activeIndex: 0,
                 activeMenu: !1
               }),
-              (n.getData = n.getData.bind(Object(T.a)(n))),
-              (n.activeMenu = n.activeMenu.bind(Object(T.a)(n))),
-              (n.menuToggle = n.menuToggle.bind(Object(T.a)(n))),
+              (n.getData = n.getData.bind(Object(k.a)(n))),
+              (n.activeMenu = n.activeMenu.bind(Object(k.a)(n))),
+              (n.menuToggle = n.menuToggle.bind(Object(k.a)(n))),
               n
             );
           }
@@ -179,7 +179,7 @@
                                   "li",
                                   { key: n },
                                   c.a.createElement(
-                                    k.a,
+                                    T.a,
                                     {
                                       to: t.to,
                                       className:
@@ -204,7 +204,7 @@
                                     null,
                                     c.a.createElement(
                                       "a",
-                                      { href: t.facebook },
+                                      { href: t.facebook, target: "_blank" },
                                       c.a.createElement("img", {
                                         src: C.a,
                                         alt: "Facebook"
@@ -574,4 +574,4 @@
   },
   [[70, 5, 6]]
 ]);
-//# sourceMappingURL=main.4e032cba.chunk.js.map
+//# sourceMappingURL=main.4129a1aa.chunk.js.map

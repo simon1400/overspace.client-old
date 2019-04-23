@@ -17,16 +17,16 @@
         i = a(13),
         s = a(16),
         l = a(14),
-        r = a(8),
-        c = a(15),
+        c = a(8),
+        r = a(15),
         o = a(0),
         u = a.n(o),
         m = a(39),
         d = a(183),
         k = a.n(d),
         h = a(23),
-        v = a(181),
-        p = a.n(v),
+        p = a(181),
+        v = a.n(p),
         g = a(182),
         f = a.n(g),
         E = (function(e) {
@@ -37,12 +37,12 @@
               ((a = Object(s.a)(this, Object(l.a)(t).call(this, e))).state = {
                 data: []
               }),
-              (a.getData = a.getData.bind(Object(r.a)(a))),
+              (a.getData = a.getData.bind(Object(c.a)(a))),
               a
             );
           }
           return (
-            Object(c.a)(t, e),
+            Object(r.a)(t, e),
             Object(i.a)(t, [
               {
                 key: "componentDidMount",
@@ -120,7 +120,7 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-left uk-position-small uk-hidden-hover",
+                                          "uk-position-center-left uk-position-small",
                                         href: "#",
                                         "uk-slidenav-previous": "true",
                                         "uk-slideshow-item": "previous"
@@ -134,13 +134,13 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-right uk-position-small uk-hidden-hover",
+                                          "uk-position-center-right uk-position-small",
                                         href: "#",
                                         "uk-slidenav-next": "true",
                                         "uk-slideshow-item": "next"
                                       },
                                       u.a.createElement("img", {
-                                        src: p.a,
+                                        src: v.a,
                                         alt: "Right"
                                       })
                                     )
@@ -188,4 +188,4 @@
     }
   }
 ]);
-//# sourceMappingURL=about.9bb1b685.chunk.js.map
+//# sourceMappingURL=about.c671a25e.chunk.js.map

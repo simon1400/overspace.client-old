@@ -652,9 +652,9 @@
         m = n(200),
         v = n.n(m),
         g = n(181),
-        k = n.n(g),
-        y = n(182),
-        w = n.n(y),
+        y = n.n(g),
+        k = n(182),
+        w = n.n(k),
         b = v()(p.a);
       var E = (function(t) {
         function e(t) {
@@ -749,7 +749,7 @@
                                 "a",
                                 {
                                   className:
-                                    "uk-position-center-left uk-position-small uk-hidden-hover",
+                                    "uk-position-center-left uk-position-small",
                                   href: "#",
                                   "uk-slidenav-previous": "true",
                                   "uk-slideshow-item": "previous"
@@ -763,13 +763,13 @@
                                 "a",
                                 {
                                   className:
-                                    "uk-position-center-right uk-position-small uk-hidden-hover",
+                                    "uk-position-center-right uk-position-small",
                                   href: "#",
                                   "uk-slidenav-next": "true",
                                   "uk-slideshow-item": "next"
                                 },
                                 u.a.createElement("img", {
-                                  src: k.a,
+                                  src: y.a,
                                   alt: "Right"
                                 })
                               )
@@ -819,7 +819,7 @@
       "use strict";
       n.r(e),
         n.d(e, "default", function() {
-          return y;
+          return k;
         });
       var a = n(12),
         i = n(13),
@@ -836,8 +836,8 @@
         m = n(181),
         v = n.n(m),
         g = n(182),
-        k = n.n(g),
-        y = (function(t) {
+        y = n.n(g),
+        k = (function(t) {
           function e(t) {
             var n;
             return (
@@ -925,13 +925,13 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-left uk-position-small uk-hidden-hover",
+                                          "uk-position-center-left uk-position-small",
                                         href: "#",
                                         "uk-slidenav-previous": "true",
                                         "uk-slideshow-item": "previous"
                                       },
                                       u.a.createElement("img", {
-                                        src: k.a,
+                                        src: y.a,
                                         alt: "Left"
                                       })
                                     ),
@@ -939,7 +939,7 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-right uk-position-small uk-hidden-hover",
+                                          "uk-position-center-right uk-position-small",
                                         href: "#",
                                         "uk-slidenav-next": "true",
                                         "uk-slideshow-item": "next"
@@ -995,7 +995,7 @@
       "use strict";
       n.r(e),
         n.d(e, "default", function() {
-          return y;
+          return k;
         });
       var a = n(12),
         i = n(13),
@@ -1012,8 +1012,8 @@
         m = n(181),
         v = n.n(m),
         g = n(182),
-        k = n.n(g),
-        y = (function(t) {
+        y = n.n(g),
+        k = (function(t) {
           function e(t) {
             var n;
             return (
@@ -1100,13 +1100,13 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-left uk-position-small uk-hidden-hover",
+                                          "uk-position-center-left uk-position-small",
                                         href: "#",
                                         "uk-slidenav-previous": "true",
                                         "uk-slideshow-item": "previous"
                                       },
                                       u.a.createElement("img", {
-                                        src: k.a,
+                                        src: y.a,
                                         alt: "Left"
                                       })
                                     ),
@@ -1114,7 +1114,7 @@
                                       "a",
                                       {
                                         className:
-                                          "uk-position-center-right uk-position-small uk-hidden-hover",
+                                          "uk-position-center-right uk-position-small",
                                         href: "#",
                                         "uk-slidenav-next": "true",
                                         "uk-slideshow-item": "next"
@@ -1168,4 +1168,4 @@
     }
   }
 ]);
-//# sourceMappingURL=profile.ea4f0238.chunk.js.map
+//# sourceMappingURL=profile.85571cad.chunk.js.map
