@@ -7,7 +7,7 @@ import sanityClient from "../../../lib/sanity.js";
 const query = `*[_type == "projects"] | order(short) {
   _id,
   title,
-  slug,
+  bigBlock,
   "image": images[0].asset->url
 }[0...20]
 `;
@@ -36,6 +36,7 @@ export default class Homepage extends Component {
 
   render() {
     var data = this.state.projects;
+    console.log(data);
     if (Object.keys(data).length) {
       return (
         <Page id="projects">
@@ -46,11 +47,22 @@ export default class Homepage extends Component {
               uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 400"
             >
               {data.map((item, index) => (
-                <div key={index} className="uk-width-1-4@s uk-width-1-2">
-                  <Link to={`/projects/${item.slug.current}`}>
-                    <div className="project-short-item uk-cover-container">
+                <div
+                  key={index}
+                  className={`${
+                    !item.bigBlock ? "uk-width-1-4@s" : ""
+                  } uk-width-1-2`}
+                >
+                  <Link to={`/projects/${item.title.replace(/ /g, "_")}`}>
+                    <div
+                      className={`project-short-item uk-cover-container ${
+                        item.bigBlock ? "project-short-big" : ""
+                      }`}
+                    >
                       <img
-                        src={`${item.image}?w=400&h=400`}
+                        src={`${item.image}?w=${
+                          item.bigBlock ? "680" : "400"
+                        }&h=400`}
                         alt={item.title}
                         uk-cover="true"
                       />

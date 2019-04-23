@@ -5,16 +5,18 @@ import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../../../lib/sanity.js";
 import imageUrlBuilder from "@sanity/image-url";
 
+import right from "../../assets/right.svg";
+import left from "../../assets/left.svg";
+
 const imageBuilder = imageUrlBuilder(sanityClient);
 
 function urlFor(source) {
   return imageBuilder.image(source);
 }
 
-const query = `*[_type == "projects" && slug.current == $slug] {
+const query = `*[_type == "projects" && title == $slug] {
   _id,
   title,
-  slug,
   content,
   images
 }[0...1]
@@ -32,7 +34,7 @@ export default class Contacts extends Component {
 
   componentDidMount() {
     sanityClient
-      .fetch(query, { slug: this.props.match.params.url })
+      .fetch(query, { slug: this.props.match.params.url.replace(/_/g, " ") })
       .then(this.getData)
       .catch(err => console.log(err));
   }
@@ -85,22 +87,7 @@ export default class Contacts extends Component {
                     uk-slidenav-previous="true"
                     uk-slideshow-item="previous"
                   >
-                    <svg
-                      style={{ width: "30px", height: "30px" }}
-                      aria-hidden="true"
-                      focusable="false"
-                      data-prefix="fal"
-                      data-icon="chevron-left"
-                      class="svg-inline--fa fa-chevron-left fa-w-8"
-                      role="img"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                      />
-                    </svg>
+                    <img src={left} alt="Left" />
                   </a>
                   <a
                     className="uk-position-center-right uk-position-small uk-hidden-hover"
@@ -108,22 +95,7 @@ export default class Contacts extends Component {
                     uk-slidenav-next="true"
                     uk-slideshow-item="next"
                   >
-                    <svg
-                      style={{ width: "30px", height: "30px" }}
-                      aria-hidden="true"
-                      focusable="false"
-                      data-prefix="fal"
-                      data-icon="chevron-right"
-                      class="svg-inline--fa fa-chevron-right fa-w-8"
-                      role="img"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
-                      />
-                    </svg>
+                    <img src={right} alt="Right" />
                   </a>
                 </div>
               </div>
@@ -139,10 +111,10 @@ export default class Contacts extends Component {
       );
     } else {
       return (
-        <div class="preloader uk-inline">
-          <div class="uk-overlay-default uk-position-cover">
-            <div class="uk-position-center">
-              <span class="uk-margin-small-right" uk-spinner="ratio: 3" />
+        <div className="preloader uk-inline">
+          <div className="uk-overlay-default uk-position-cover">
+            <div className="uk-position-center">
+              <span className="uk-margin-small-right" uk-spinner="ratio: 3" />
             </div>
           </div>
         </div>

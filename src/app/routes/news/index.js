@@ -4,6 +4,9 @@ import Page from "../../components/page";
 import BlockContent from "@sanity/block-content-to-react";
 import sanityClient from "../../../lib/sanity.js";
 
+import right from "../../assets/right.svg";
+import left from "../../assets/left.svg";
+
 const query = `*[_type == "news"] | order(short) {
   _id,
   title,
@@ -39,10 +42,7 @@ export default class News extends Component {
     var data = this.state.data;
     if (Object.keys(data).length) {
       return (
-        <Page
-          id="news"
-          title="News"
-        >
+        <Page id="news" title="News">
           <div className="uk-container">
             <div
               className="uk-grid uk-child-width-1-1"
@@ -71,22 +71,7 @@ export default class News extends Component {
                         uk-slidenav-previous="true"
                         uk-slideshow-item="previous"
                       >
-                        <svg
-                          style={{ width: "30px", height: "30px" }}
-                          aria-hidden="true"
-                          focusable="false"
-                          data-prefix="fal"
-                          data-icon="chevron-left"
-                          className="svg-inline--fa fa-chevron-left fa-w-8"
-                          role="img"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M238.475 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L50.053 256 245.546 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L10.454 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"
-                          />
-                        </svg>
+                        <img src={left} alt="Left" />
                       </a>
                       <a
                         className="uk-position-center-right uk-position-small uk-hidden-hover"
@@ -94,22 +79,7 @@ export default class News extends Component {
                         uk-slidenav-next="true"
                         uk-slideshow-item="next"
                       >
-                        <svg
-                          style={{ width: "30px", height: "30px" }}
-                          aria-hidden="true"
-                          focusable="false"
-                          data-prefix="fal"
-                          data-icon="chevron-right"
-                          className="svg-inline--fa fa-chevron-right fa-w-8"
-                          role="img"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 256 512"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M17.525 36.465l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L205.947 256 10.454 451.494c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l211.051-211.05c4.686-4.686 4.686-12.284 0-16.971L34.495 36.465c-4.686-4.687-12.284-4.687-16.97 0z"
-                          />
-                        </svg>
+                        <img src={right} alt="Right" />
                       </a>
                     </div>
                     <div className="content">

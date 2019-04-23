@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import window from 'global'
 
-import envelope from "./assets/envelope-regular.svg";
-import facebook from "./assets/facebook-square-brands.svg";
+import envelope from "./assets/mail.svg";
+import facebook from "./assets/facebook.svg";
 
 import sanityClient from "../lib/sanity.js";
 
@@ -37,11 +36,7 @@ const links = [
   }
 ];
 
-
-
-
-
- class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,30 +55,28 @@ const links = [
       .then(this.getData)
       .catch(err => console.log(err));
 
-
-      var location = this.props.location.pathname;
-      links.map(item => {
-        if(location === item.to){
-          return item.active = true;
-        }else{
-          return item.active = false;
-        }
-      })
-
-
-      function search(nameKey, myArray){
-          for (var i=0; i < myArray.length; i++) {
-              if (myArray[i].active === nameKey) {
-                return i;
-              }
-          }
+    var location = this.props.location.pathname;
+    links.map(item => {
+      if (location === item.to) {
+        return (item.active = true);
+      } else {
+        return (item.active = false);
       }
+    });
 
-      var resultObject = search(true, links);
+    function search(nameKey, myArray) {
+      for (var i = 0; i < myArray.length; i++) {
+        if (myArray[i].active === nameKey) {
+          return i;
+        }
+      }
+    }
 
-      this.setState({
-        activeIndex: resultObject
-      })
+    var resultObject = search(true, links);
+
+    this.setState({
+      activeIndex: resultObject
+    });
   }
 
   getData(data) {
@@ -92,18 +85,17 @@ const links = [
     });
   }
 
-
   activeMenu(e, index) {
     this.setState({
       activeIndex: index,
       activeMenu: false
-    })
+    });
   }
 
   menuToggle() {
     this.setState({
       activeMenu: !this.state.activeMenu
-    })
+    });
   }
 
   render() {
@@ -118,11 +110,19 @@ const links = [
               </div>
             </div>
             <div className="uk-width-4-5">
-              <nav className={this.state.activeMenu ? 'active_mnu_mobile' : ''}>
+              <nav className={this.state.activeMenu ? "active_mnu_mobile" : ""}>
                 <ul>
                   {links.map((link, index) => (
                     <li key={index}>
-                      <Link to={link.to} className={this.state.activeIndex === index ? 'active_mnu' : ''} onClick={e => this.activeMenu(e, index)}>{link.text}</Link>
+                      <Link
+                        to={link.to}
+                        className={
+                          this.state.activeIndex === index ? "active_mnu" : ""
+                        }
+                        onClick={e => this.activeMenu(e, index)}
+                      >
+                        {link.text}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -148,7 +148,9 @@ const links = [
                 </ul>
               </nav>
               <button
-                className={`hamburger hamburger--spring uk-align-right ${this.state.activeMenu ? 'is-active' : ''}`}
+                className={`hamburger hamburger--spring uk-align-right ${
+                  this.state.activeMenu ? "is-active" : ""
+                }`}
                 type="button"
                 onClick={this.menuToggle}
               >
@@ -164,6 +166,6 @@ const links = [
   }
 }
 
-const SomeComponent = withRouter(props => <Header {...props}/>);
+const SomeComponent = withRouter(props => <Header {...props} />);
 
-export default SomeComponent
+export default SomeComponent;
