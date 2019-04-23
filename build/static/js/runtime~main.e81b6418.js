@@ -49,7 +49,7 @@
               "static/js/" +
               ({ 1: "about", 2: "homepage", 4: "profile" }[e] || e) +
               "." +
-              { 0: "0b7db1a5", 1: "9bb1b685", 2: "f671c535", 4: "ea4f0238" }[
+              { 0: "0b7db1a5", 1: "9bb1b685", 2: "c26149b4", 4: "ea4f0238" }[
                 e
               ] +
               ".chunk.js"
@@ -132,4 +132,4 @@
   var l = c;
   t();
 })([]);
-//# sourceMappingURL=runtime~main.9cf12f4d.js.map
+//# sourceMappingURL=runtime~main.e81b6418.js.map

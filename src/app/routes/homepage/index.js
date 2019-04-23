@@ -50,8 +50,10 @@ export default class Homepage extends Component {
                 <div
                   key={index}
                   className={`${
-                    !item.bigBlock ? "uk-width-1-4@s" : ""
-                  } uk-width-1-2`}
+                    !item.bigBlock
+                      ? "uk-width-1-4@s uk-width-1-2"
+                      : " uk-width-1-2@s uk-width-1-1"
+                  } `}
                 >
                   <Link to={`/projects/${item.title.replace(/ /g, "_")}`}>
                     <div

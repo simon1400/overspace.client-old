@@ -79,8 +79,10 @@
                                   {
                                     key: t,
                                     className: "".concat(
-                                      e.bigBlock ? "" : "uk-width-1-4@s",
-                                      " uk-width-1-2"
+                                      e.bigBlock
+                                        ? " uk-width-1-2@s uk-width-1-1"
+                                        : "uk-width-1-4@s uk-width-1-2",
+                                      " "
                                     )
                                   },
                                   u.a.createElement(
@@ -154,4 +156,4 @@
     }
   }
 ]);
-//# sourceMappingURL=homepage.f671c535.chunk.js.map
+//# sourceMappingURL=homepage.c26149b4.chunk.js.map
