@@ -104,12 +104,18 @@ class Header extends Component {
       <header>
         <div className="uk-container">
           <div className="uk-grid" uk-grid="true">
-            <div className="uk-width-1-5">
+            <div className="uk-width-1-5@m uk-width-1-2@s uk-width-2-3">
               <div className="logo">
-                <a href="/">{this.state.soc.name}</a>
+                <a href="/">
+                  {this.state.activeIndex === 0 ? (
+                    <h1> {this.state.soc.name} </h1>
+                  ) : (
+                    this.state.soc.name
+                  )}
+                </a>
               </div>
             </div>
-            <div className="uk-width-4-5">
+            <div className="uk-width-4-5@m uk-width-1-2@s uk-width-1-3">
               <nav className={this.state.activeMenu ? "active_mnu_mobile" : ""}>
                 <ul>
                   {links.map((link, index) => (

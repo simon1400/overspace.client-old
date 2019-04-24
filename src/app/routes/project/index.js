@@ -101,7 +101,7 @@ export default class Contacts extends Component {
               </div>
               <div>
                 <div className="product-content content">
-                  <h2 className="head">{data.title}</h2>
+                  <h1 className="head">{data.title}</h1>
                   <BlockContent blocks={data.content} />
                 </div>
               </div>

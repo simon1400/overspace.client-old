@@ -83,7 +83,7 @@ export default class News extends Component {
                       </a>
                     </div>
                     <div className="content">
-                      <h2 className="head">{item.title}</h2>
+                      <h1 className="head">{item.title}</h1>
                       <BlockContent blocks={item.content} />
                     </div>
                   </div>

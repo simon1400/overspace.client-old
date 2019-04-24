@@ -62,9 +62,7 @@ export default class Homepage extends Component {
                       }`}
                     >
                       <img
-                        src={`${item.image}?w=${
-                          item.bigBlock ? "680" : "400"
-                        }&h=400`}
+                        src={`${item.image}?w=${item.bigBlock ? "680" : "400"}`}
                         alt={item.title}
                         uk-cover="true"
                       />
