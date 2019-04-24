@@ -102,10 +102,7 @@
                                       u.a.createElement("img", {
                                         src: ""
                                           .concat(e.image, "?w=")
-                                          .concat(
-                                            e.bigBlock ? "680" : "400",
-                                            "&h=400"
-                                          ),
+                                          .concat(e.bigBlock ? "680" : "400"),
                                         alt: e.title,
                                         "uk-cover": "true"
                                       }),
@@ -156,4 +153,4 @@
     }
   }
 ]);
-//# sourceMappingURL=homepage.c26149b4.chunk.js.map
+//# sourceMappingURL=homepage.829198bf.chunk.js.map

@@ -149,7 +149,7 @@
                                     "div",
                                     { className: "content" },
                                     u.a.createElement(
-                                      "h2",
+                                      "h1",
                                       { className: "head" },
                                       e.title
                                     ),
@@ -188,4 +188,4 @@
     }
   }
 ]);
-//# sourceMappingURL=about.c671a25e.chunk.js.map
+//# sourceMappingURL=about.3088bdd5.chunk.js.map

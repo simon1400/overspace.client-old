@@ -56,16 +56,16 @@
           window.document.createElement
         ),
         E = (n(88), n(12)),
-        y = n(13),
-        j = n(16),
-        O = n(14),
-        w = n(15),
-        _ = n(20),
-        k = n(8),
+        w = n(13),
+        y = n(16),
+        j = n(14),
+        O = n(15),
+        k = n(20),
+        _ = n(8),
         T = n(177),
-        N = n(178),
-        x = n(64),
-        D = n.n(x),
+        x = n(178),
+        N = n(64),
+        D = n.n(N),
         M = n(65),
         C = n.n(M),
         S = n(23),
@@ -80,20 +80,20 @@
             var n;
             return (
               Object(E.a)(this, t),
-              ((n = Object(j.a)(this, Object(O.a)(t).call(this, e))).state = {
+              ((n = Object(y.a)(this, Object(j.a)(t).call(this, e))).state = {
                 soc: {},
                 activeIndex: 0,
                 activeMenu: !1
               }),
-              (n.getData = n.getData.bind(Object(k.a)(n))),
-              (n.activeMenu = n.activeMenu.bind(Object(k.a)(n))),
-              (n.menuToggle = n.menuToggle.bind(Object(k.a)(n))),
+              (n.getData = n.getData.bind(Object(_.a)(n))),
+              (n.activeMenu = n.activeMenu.bind(Object(_.a)(n))),
+              (n.menuToggle = n.menuToggle.bind(Object(_.a)(n))),
               n
             );
           }
           return (
-            Object(w.a)(t, e),
-            Object(y.a)(t, [
+            Object(O.a)(t, e),
+            Object(w.a)(t, [
               {
                 key: "componentDidMount",
                 value: function() {
@@ -150,20 +150,34 @@
                         { className: "uk-grid", "uk-grid": "true" },
                         c.a.createElement(
                           "div",
-                          { className: "uk-width-1-5" },
+                          {
+                            className:
+                              "uk-width-1-5@m uk-width-1-2@s uk-width-2-3"
+                          },
                           c.a.createElement(
                             "div",
                             { className: "logo" },
                             c.a.createElement(
                               "a",
                               { href: "/" },
-                              this.state.soc.name
+                              0 === this.state.activeIndex
+                                ? c.a.createElement(
+                                    "h1",
+                                    null,
+                                    " ",
+                                    this.state.soc.name,
+                                    " "
+                                  )
+                                : this.state.soc.name
                             )
                           )
                         ),
                         c.a.createElement(
                           "div",
-                          { className: "uk-width-4-5" },
+                          {
+                            className:
+                              "uk-width-4-5@m uk-width-1-2@s uk-width-1-3"
+                          },
                           c.a.createElement(
                             "nav",
                             {
@@ -255,7 +269,7 @@
             t
           );
         })(a.Component),
-        R = Object(N.a)(function(e) {
+        R = Object(x.a)(function(e) {
           return c.a.createElement(P, e);
         }),
         X = n(179),
@@ -343,12 +357,12 @@
           function t() {
             return (
               Object(E.a)(this, t),
-              Object(j.a)(this, Object(O.a)(t).apply(this, arguments))
+              Object(y.a)(this, Object(j.a)(t).apply(this, arguments))
             );
           }
           return (
-            Object(w.a)(t, e),
-            Object(y.a)(t, [
+            Object(O.a)(t, e),
+            Object(w.a)(t, [
               {
                 key: "render",
                 value: function() {
@@ -367,7 +381,7 @@
             t
           );
         })(a.Component)),
-        G = Object(_.a)(B),
+        G = Object(k.a)(B),
         K = (n(174),
         (function() {
           var e =
@@ -574,4 +588,4 @@
   },
   [[70, 5, 6]]
 ]);
-//# sourceMappingURL=main.4129a1aa.chunk.js.map
+//# sourceMappingURL=main.e4238c83.chunk.js.map

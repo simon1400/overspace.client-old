@@ -782,7 +782,7 @@
                               "div",
                               { className: "product-content content" },
                               u.a.createElement(
-                                "h2",
+                                "h1",
                                 { className: "head" },
                                 t.title
                               ),
@@ -1129,7 +1129,7 @@
                                     "div",
                                     { className: "content" },
                                     u.a.createElement(
-                                      "h2",
+                                      "h1",
                                       { className: "head" },
                                       t.title
                                     ),
@@ -1168,4 +1168,4 @@
     }
   }
 ]);
-//# sourceMappingURL=profile.85571cad.chunk.js.map
+//# sourceMappingURL=profile.9aec19d6.chunk.js.map
