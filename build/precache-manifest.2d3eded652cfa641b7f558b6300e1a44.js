@@ -48,12 +48,12 @@ self.__precacheManifest = [
     url: "/static/media/worksans-medium.e11759b0.woff"
   },
   {
-    revision: "8428d7021e554f5d1beab6f85639e851",
-    url: "/static/media/worksans-light.8428d702.eot"
-  },
-  {
     revision: "64f2a5e5cef65bcabf4335a29205aa6b",
     url: "/static/media/worksans-medium.64f2a5e5.eot"
+  },
+  {
+    revision: "8428d7021e554f5d1beab6f85639e851",
+    url: "/static/media/worksans-light.8428d702.eot"
   },
   {
     revision: "6bd827142f0313f37d611e1447d67b88",
