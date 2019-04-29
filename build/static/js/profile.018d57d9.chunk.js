@@ -639,10 +639,10 @@
         });
       var a = n(12),
         i = n(13),
-        r = n(16),
+        r = n(15),
         o = n(14),
         c = n(8),
-        l = n(15),
+        l = n(16),
         s = n(0),
         u = n.n(s),
         h = n(39),
@@ -782,7 +782,7 @@
                               "div",
                               { className: "product-content content" },
                               u.a.createElement(
-                                "h2",
+                                "h1",
                                 { className: "head" },
                                 t.title
                               ),
@@ -823,10 +823,10 @@
         });
       var a = n(12),
         i = n(13),
-        r = n(16),
+        r = n(15),
         o = n(14),
         c = n(8),
-        l = n(15),
+        l = n(16),
         s = n(0),
         u = n.n(s),
         h = n(39),
@@ -999,10 +999,10 @@
         });
       var a = n(12),
         i = n(13),
-        r = n(16),
+        r = n(15),
         o = n(14),
         c = n(8),
-        l = n(15),
+        l = n(16),
         s = n(0),
         u = n.n(s),
         h = n(39),
@@ -1129,7 +1129,7 @@
                                     "div",
                                     { className: "content" },
                                     u.a.createElement(
-                                      "h2",
+                                      "h1",
                                       { className: "head" },
                                       t.title
                                     ),
@@ -1168,4 +1168,4 @@
     }
   }
 ]);
-//# sourceMappingURL=profile.85571cad.chunk.js.map
+//# sourceMappingURL=profile.018d57d9.chunk.js.map

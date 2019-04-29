@@ -7662,12 +7662,17 @@ header {
   text-transform: uppercase;
   font-size: 20px;
 }
-header .logo {
+header .logo a,
+header .logo a h1 {
+  color: #333;
   font-weight: 700;
   letter-spacing: 1px;
-}
-header .logo a {
-  color: #333;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+  display: block;
+  line-height: 20px;
+  font-family: worksans-medium, sans-serif;
 }
 header .logo a:hover {
   color: #333;
@@ -7750,6 +7755,7 @@ header nav ul li a:hover:after {
 }
 .project-short-item .head {
   color: #fff;
+  font-size: 20px;
 }
 .project-short-item .uk-overlay {
   background-color: rgba(0, 0, 0, 0.6);
@@ -7840,7 +7846,7 @@ header nav ul li a:hover:after {
     padding-top: calc(50% - 15px);
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 960px) {
   header nav {
     position: fixed;
     height: 100vh;
@@ -7902,9 +7908,6 @@ header nav ul li a:hover:after {
   .project-short-item .uk-overlay {
     padding: 0;
   }
-  .project-short-item .head {
-    font-size: 20px;
-  }
 }
 @media (max-width: 639px) {
   header nav {
@@ -7929,4 +7932,4 @@ header nav ul li a:hover:after {
     padding-top: 120px;
   }
 }
-/*# sourceMappingURL=main.bd51b45c.chunk.css.map */
+/*# sourceMappingURL=main.e2ae4642.chunk.css.map */

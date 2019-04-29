@@ -15,10 +15,10 @@
         });
       var n = a(12),
         i = a(13),
-        s = a(16),
+        s = a(15),
         l = a(14),
         c = a(8),
-        r = a(15),
+        r = a(16),
         o = a(0),
         u = a.n(o),
         m = a(39),
@@ -149,7 +149,7 @@
                                     "div",
                                     { className: "content" },
                                     u.a.createElement(
-                                      "h2",
+                                      "h1",
                                       { className: "head" },
                                       e.title
                                     ),
@@ -188,4 +188,4 @@
     }
   }
 ]);
-//# sourceMappingURL=about.c671a25e.chunk.js.map
+//# sourceMappingURL=about.c3aa534c.chunk.js.map

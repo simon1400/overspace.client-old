@@ -9,10 +9,10 @@
         });
       var c = a(12),
         n = a(13),
-        r = a(16),
+        r = a(15),
         i = a(14),
         o = a(8),
-        l = a(15),
+        l = a(16),
         s = a(0),
         u = a.n(s),
         m = a(177),
@@ -102,10 +102,7 @@
                                       u.a.createElement("img", {
                                         src: ""
                                           .concat(e.image, "?w=")
-                                          .concat(
-                                            e.bigBlock ? "680" : "400",
-                                            "&h=400"
-                                          ),
+                                          .concat(e.bigBlock ? "680" : "400"),
                                         alt: e.title,
                                         "uk-cover": "true"
                                       }),
@@ -156,4 +153,4 @@
     }
   }
 ]);
-//# sourceMappingURL=homepage.c26149b4.chunk.js.map
+//# sourceMappingURL=homepage.1b7f61cd.chunk.js.map
