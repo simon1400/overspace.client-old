@@ -49,52 +49,23 @@ export default class Contacts extends Component {
     var data = this.state.data;
     if (Object.keys(data).length) {
       return (
-        <Page
-          id="project"
-          title={data.title}
-          description="This is about really cool stuff."
-        >
+        <Page id="project" title={data.title} description="This is about really cool stuff.">
           <div className="uk-container">
-            <div
-              className="uk-grid uk-child-width-1-2@m uk-child-width-1-1"
-              uk-grid="true"
-              uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 400"
-            >
+            <div className="uk-grid uk-child-width-1-2@m uk-child-width-1-1" uk-grid="true" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 400">
               <div>
-                <div
-                  className="uk-position-relative uk-visible-toggle uk-light product-slider"
-                  tabIndex="-1"
-                  uk-slideshow="ratio: 1:1"
-                >
+                <div className="uk-position-relative uk-visible-toggle uk-light product-slider" tabIndex="-1" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
                     {data.images.map((item, index) => (
                       <li key={index}>
-                        <img
-                          src={urlFor(item)
-                            .width(700)
-                            .height(700)
-                            .url()}
-                          alt=""
-                          uk-cover="true"
-                        />
+                        <img src={urlFor(item).width(700).height(700).url()} alt="" uk-cover="true" />
                       </li>
                     ))}
                   </ul>
 
-                  <a
-                    className="uk-position-center-left uk-position-small"
-                    href="#"
-                    uk-slidenav-previous="true"
-                    uk-slideshow-item="previous"
-                  >
+                  <a className="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous">
                     <img src={left} alt="Left" />
                   </a>
-                  <a
-                    className="uk-position-center-right uk-position-small"
-                    href="#"
-                    uk-slidenav-next="true"
-                    uk-slideshow-item="next"
-                  >
+                  <a className="uk-position-center-right uk-position-small" href="#" uk-slidenav-next="true" uk-slideshow-item="next">
                     <img src={right} alt="Right" />
                   </a>
                 </div>

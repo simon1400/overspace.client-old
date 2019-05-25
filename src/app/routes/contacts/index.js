@@ -44,19 +44,11 @@ export default class Contacts extends Component {
       return (
         <Page id="contacts" title="Contacts">
           <div className="uk-container">
-            <div
-              className="uk-grid uk-child-width-1-2@s uk-child-width-1-1"
-              uk-grid="true"
-              uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 400"
-            >
+            <div className="uk-grid uk-child-width-1-2@s uk-child-width-1-1" uk-grid="true" uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 400">
               {data.map((item, index) => (
                 <div key={index}>
                   <div className="contact-item">
-                    <div
-                      className="uk-position-relative uk-visible-toggle uk-light"
-                      tabIndex="-1"
-                      uk-slideshow="ratio: 7:4"
-                    >
+                    {item.images.length ? <div className="uk-position-relative uk-visible-toggle uk-light" tabIndex="-1" uk-slideshow="ratio: 7:4">
                       <ul className="uk-slideshow-items">
                         {item.images.map((url, indexImg) => (
                           <li key={indexImg}>
@@ -65,23 +57,13 @@ export default class Contacts extends Component {
                         ))}
                       </ul>
 
-                      <a
-                        className="uk-position-center-left uk-position-small"
-                        href="#"
-                        uk-slidenav-previous="true"
-                        uk-slideshow-item="previous"
-                      >
+                      <a className="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous="true" uk-slideshow-item="previous">
                         <img src={left} alt="Left" />
                       </a>
-                      <a
-                        className="uk-position-center-right uk-position-small"
-                        href="#"
-                        uk-slidenav-next="true"
-                        uk-slideshow-item="next"
-                      >
+                      <a className="uk-position-center-right uk-position-small" href="#" uk-slidenav-next="true" uk-slideshow-item="next">
                         <img src={right} alt="Right" />
                       </a>
-                    </div>
+                    </div> : ''}
                     <div className="content">
                       <h2 className="head">{item.title}</h2>
                       <BlockContent blocks={item.content} />

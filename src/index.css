@@ -299,6 +299,7 @@ pre code {
 details,
 main {
   display: block;
+  padding-bottom: 100px;
 }
 summary {
   display: list-item;
@@ -3340,6 +3341,10 @@ ul.uk-nav-sub {
 }
 .uk-slideshow {
   -webkit-tap-highlight-color: transparent;
+}
+
+.uk-slideshow .uk-slidenav svg{
+  display: none;
 }
 .uk-slideshow-items {
   position: relative;
