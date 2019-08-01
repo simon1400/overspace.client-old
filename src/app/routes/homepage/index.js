@@ -36,7 +36,6 @@ export default class Homepage extends Component {
 
   render() {
     var data = this.state.projects;
-    console.log(data);
     if (Object.keys(data).length) {
       return (
         <Page id="projects">
@@ -55,7 +54,7 @@ export default class Homepage extends Component {
                       : " uk-width-1-2@s uk-width-1-1"
                   } `}
                 >
-                  <Link to={`/projects/${item.title.replace(/ /g, "_")}`}>
+                  <Link to={`/projects/${item.title.replace(/ /g, "_")}`} className="project_short_url">
                     <div
                       className={`project-short-item uk-cover-container ${
                         item.bigBlock ? "project-short-big" : ""

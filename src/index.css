@@ -8576,6 +8576,10 @@ header nav ul li a:hover:after,
 .active_mnu:after {
   width: 100%;
 }
+
+.project_short_url{
+  opacity: 0;
+}
 .project-short-item {
   padding-top: 100%;
   display: block;

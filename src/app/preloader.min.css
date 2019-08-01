@@ -1,7 +1,7 @@
 main {
   position: relative;
-  min-height: -webkit-calc(100vh - 144px);
-  min-height: calc(100vh - 144px);
+  min-height: -webkit-calc(100vh - 244px);
+  min-height: calc(100vh - 244px);
 }
 main .preloader {
   position: absolute;
