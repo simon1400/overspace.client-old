@@ -8458,6 +8458,7 @@ body {
   font-family: worksans-medium, sans-serif;
   overflow-x: hidden;
   overflow-y: hidden;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   color: #333;
   -webkit-font-smoothing: antialiased;
 }
@@ -8627,6 +8628,7 @@ header nav ul li a:hover:after,
 }
 .product-content.content {
   margin-top: 0;
+  opacity: 0;  
 }
 .content {
   margin-top: 25px;

@@ -51,7 +51,7 @@ export default class Contacts extends Component {
       return (
         <Page id="project" title={data.title} description="This is about really cool stuff.">
           <div className="uk-container">
-            <div className="uk-grid uk-child-width-1-2@m uk-child-width-1-1" uk-grid="true" uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 400">
+            <div className="uk-grid uk-child-width-1-2@m uk-child-width-1-1" uk-grid="true" uk-scrollspy="target: > div > div; cls:uk-animation-fade; delay: 400">
               <div>
                 <div className="uk-position-relative uk-visible-toggle uk-light product-slider" tabIndex="-1" uk-slideshow="ratio: 1:1">
                   <ul className="uk-slideshow-items">
