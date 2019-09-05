@@ -14,7 +14,7 @@ function urlFor(source) {
   return imageBuilder.image(source);
 }
 
-const query = `*[_type == "projects" && title == $slug] {
+const query = `*[_type == "projects" && slug.current == $slug] {
   _id,
   title,
   content,
@@ -34,7 +34,7 @@ export default class Contacts extends Component {
 
   componentDidMount() {
     sanityClient
-      .fetch(query, { slug: this.props.match.params.url.replace(/_/g, " ") })
+      .fetch(query, { slug: this.props.match.params.url })
       .then(this.getData)
       .catch(err => console.log(err));
   }

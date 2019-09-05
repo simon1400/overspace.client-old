@@ -8,6 +8,7 @@ const query = `*[_type == "projects"] | order(short) {
   _id,
   title,
   bigBlock,
+  slug,
   "image": images[0].asset->url
 }[0...20]
 `;
@@ -54,7 +55,7 @@ export default class Homepage extends Component {
                       : " uk-width-1-2@s uk-width-1-1"
                   } `}
                 >
-                  <Link to={`/projects/${item.title.replace(/ /g, "_")}`} className="project_short_url">
+                  <Link to={`/projects/${item.slug.current}`} className="project_short_url">
                     <div
                       className={`project-short-item uk-cover-container ${
                         item.bigBlock ? "project-short-big" : ""
